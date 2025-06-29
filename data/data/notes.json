@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "BEGC-101: English",
+    "code": "BEGC-101",
+    "semester": "Sem 1",
+    "link": "https://example.com/begc101.pdf"
+  },
+  {
+    "subject": "BPCC-131: Psychology",
+    "code": "BPCC-131",
+    "semester": "Sem 2",
+    "link": "https://example.com/bpcc131.pdf"
+  }
+]
