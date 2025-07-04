@@ -1,40 +1,62 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+.site-header {
+  background-color: #003366;
+  color: white;
   padding: 2rem;
-  background: #f7f7f7;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-nav {
-  background-color: #004080;
+.site-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.site-header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.button-section {
+  padding: 2rem 1rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.nav-list li {
+  margin: 1rem 0;
+}
+
+.btn {
+  display: block;
+  background: #0055aa;
+  color: #fff;
+  text-decoration: none;
   padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin-top: 2rem;
-}
-
-.buttons .btn {
-  display: inline-block;
-  margin: 1rem;
-  padding: 1rem 2rem;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
+.btn:hover {
+  background: #003f88;
 }
 
 footer {
-  margin-top: 2rem;
-  background-color: #222;
+  background: #222;
   color: #fff;
   padding: 1rem;
+  font-size: 0.9rem;
 }
