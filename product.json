@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "EHI-01 Assignment",
+    "subject": "History",
+    "type": "assignment",
+    "price": 59,
+    "description": "Latest July 2025 solved handwritten assignment."
+  },
+  {
+    "id": 2,
+    "title": "ECO-11 Notes",
+    "subject": "Economics",
+    "type": "notes",
+    "price": 89,
+    "description": "Exam-ready notes with key MCQs and topics."
+  },
+  {
+    "id": 3,
+    "title": "BSHF-101 Assignment",
+    "subject": "Foundation",
+    "type": "assignment",
+    "price": 49,
+    "description": "Expected questions for July 2025."
+  },
+  {
+    "id": 4,
+    "title": "MEC-101 Notes",
+    "subject": "Economics",
+    "type": "notes",
+    "price": 99,
+    "description": "Complete unit-wise notes with examples."
+  }
+]
