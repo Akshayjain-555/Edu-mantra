@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "BEGC-101: English",
+    "code": "BEGC-101",
+    "semester": "Semester 1",
+    "link": "https://example.com/begc101.pdf"
+  },
+  {
+    "subject": "BHDC-102: Hindi",
+    "code": "BHDC-102",
+    "semester": "Semester 1",
+    "link": ""
+  }
+]
