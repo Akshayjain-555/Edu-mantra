@@ -99,6 +99,25 @@ nav a:hover {
   color: #475569;
 }
 
+.heading-frame {
+  display: inline-block;
+  padding: 10px 28px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  background: #e0f2fe;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Services */
 .services {
   background: #ffffff;
