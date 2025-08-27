@@ -2,160 +2,863 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edu-mantra | IGNOU Help for Students</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edu-mantra — IGNOU Simplified</title>
+  <meta name="description"
+    content="Assignments, Notes, Guess Papers, Projects & Practicals for IGNOU students — fast, reliable, student‑friendly." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      /* deep blue‑black */
+      --card: #111827;
+      /* slate‑900 */
+      --muted: #6b7280;
+      /* gray‑500 */
+      --text: #f8fafc;
+      /* slate‑50 */
+      --primary: #0ea5e9;
+      /* sky‑500 */
+      --accent: #22c55e;
+      /* green‑500 */
+      --danger: #ef4444;
+      /* red‑500 */
+      --warning: #f59e0b;
+      /* amber‑500 */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --maxw: 1120px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none
+    }
+
+    img {
+      max: width 450px;
+      height: 350px;
+      display: block
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: rgba(11, 18, 32, .72);
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+      border: radius 10px;
+    }
+
+
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: .2px
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    nav a {
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: #e5e7eb
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, .06);
+      color: #fff
+    }
+
+    .cta {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #001019;
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(14, 165, 233, .35)
+    }
+
+    .cta-outline {
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: #e5e7eb
+    }
+
+    /* Hero */
+    .hero {
+      padding: 64px 0 24px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 0 0 10px;
+      font-weight: 800
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 18px;
+      margin: 0 0 18px
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34, 197, 94, .12);
+      color: #bbf7d0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(2, 6, 23, .9), rgba(2, 6, 23, .6));
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 0
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-size: 26px
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px
+    }
+
+    .grid.cards {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow)
+    }
+
+    .card h4 {
+      margin: 10px 0 8px;
+      font-size: 18px
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, .12);
+      color: #7dd3fc;
+      border: 1px solid rgba(125, 211, 252, .3)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #0b5cff;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: #e5e7eb
+    }
+
+    .btn.full {
+      width: 100%;
+      justify-content: center
+    }
+
+    /* Form */
+    form {
+      display: grid;
+      gap: 12px
+    }
+
+    .field {
+      display: grid;
+      gap: 6px
+    }
+
+    .field label {
+      font-weight: 600
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(2, 6, 23, .6);
+      color: #e5e7eb
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical
+    }
+
+    /* Testimonials */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .slides {
+      display: flex;
+      transition: transform .6s ease
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 22px
+    }
+
+    .quote {
+      font-size: 18px;
+      line-height: 1.6
+    }
+
+    .slide small {
+      color: #9ca3af
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      padding: 10px
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #334155
+    }
+
+    .dot.active {
+      background: #93c5fd
+    }
+
+    /* FAQ */
+    .faq-item {
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 14px;
+      background: var(--card)
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      cursor: pointer
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 16px 16px;
+      color: #cbd5e1
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      color: #cbd5e1
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .hero h2 {
+        font-size: 34px
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- ✅ Updated Navbar -->
-<div class="navbar">
-  <div class="container nav-content">
-    <h1 class="logo">Edu-<span>mantra</span></h1>
-
-   <div class="search-wrapper">
-  <span class="search-icon">🔎</span>
-  <input type="text" id="searchInput" placeholder="Search IGNOU Program..." onkeyup="filterPrograms()" autocomplete="off" />
-  <ul class="suggestions" id="suggestionsList"></ul>
-</div>
-
-<!-- ✅ Sidebar Navigation (Right Slide) -->
-
-<!-- ☰ Menu Icon -->
-      <div class="menu-icon" onclick="openSidebar()">☰</div>
-    </div>
-  </div>
-</div>
-
-
-
-<div id="sidebar" class="sidebar">
-  <div class="sidebar-header">
-    <div class="back-btn" onclick="closeSidebar()">
-      <span>&#8592;</span> Back
-    </div>
-  </div>
-  <ul class="sidebar-menu">
-    <li><a href="#home">🏠 Home</a></li>
-    <li><a href="#services">🛠️ Services</a></li>
-    <li><a href="#about">📖 About</a></li>
-    <li><a href="https://wa.me/917370872383">📞 Contact</a></li>
-  </ul>
-</div>
- 
-      
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container">
-      <h2>📚 IGNOU Simplified, Premium</h2>
-      <p>Assignments, Notes, and Guess Papers – trusted by 10,000+ students</p>
-    </div>
-  </section>
-
-  <!-- Services in Framed Box -->
-  <section class="services" id="services">
-    <div class="container service-frame">
-      <h2>We can serve you with</h2>
-      <div class="services-grid">
-
-        <!-- Product Pages -->
-        <div class="service-card">
-          <h4>Assignments</h4>
-          <p>Fully formatted, ready to upload assignments.</p>
-          <a href="assignments.html" class="order-btn">📄 View & Order</a>
-        </div>
-
-        <div class="service-card">
-          <h4>Notes</h4>
-          <p>Topic-wise clean notes to save your study time.</p>
-          <a href="notes.html" class="order-btn">📄 View & Order</a>
-        </div>
-
-        <div class="service-card">
-          <h4>Guess Papers</h4>
-          <p>Most expected questions based on real patterns.</p>
-          <a href="guesspapers.html" class="order-btn">📄 View & Order</a>
-        </div>
-
-
-
-        <!-- WhatsApp Based -->
-        <div class="service-card">
-          <h4>Synopsis</h4>
-          <p>Click below to connect on WhatsApp.</p>
-          <a href="https://wa.me/917370872383?text=Hi%20I%20need%20help%20with%20IGNOU%20Project" target="_blank"
-            class="order-btn">📲 Order via WhatsApp</a>
-        </div>
-
-         <div class="service-card">
-          <h4>Project</h4>
-          <p>Click below to connect on WhatsApp.</p>
-          <a href="https://wa.me/917370872383?text=Hi%20I%20need%20help%20with%20IGNOU%20Project" target="_blank"
-            class="order-btn">📲 Order via WhatsApp</a>
-        </div>
-
-        <div class="service-card">
-          <h4>Practical</h4>
-          <p>Click below to connect on WhatsApp.</p>
-          <a href="https://wa.me/917370872383?text=Hi%20I%20need%20help%20with%20IGNOU%20Practical" target="_blank"
-            class="order-btn">📲 Order via WhatsApp</a>
-        </div>
-
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Edu-mantra logo" class="logo">
       </div>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#samples">Samples</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="cta-outline" href="#contact">Contact</a></li>
+          <li><a class="cta" href="#order">Order Now</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>🤝 About Us</h2>
-      <p>Edu-Mantra was created by real IGNOU students who understand your struggles. Our mission is to simplify your
-        academic life with trusted study support, fast service, and affordable solutions.</p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="container hero" id="home">
+      <div>
+        <span class="pill">IGNOU Simplified · Trusted by 10,000+ students</span>
+        <h2>Assignments, Notes & Guess Papers — delivered fast with quality assurance.</h2>
+        <p>One place for IGNOU study materials, projects and practicals. Clear pricing. Real support. Order in under 2
+          minutes.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="#order">Get Materials</a>
+          <a class="cta-outline" href="#samples">See Samples</a>
+        </div>
+        <p class="muted" style="margin-top:10px">24×7 WhatsApp support · Secure & private · On‑time delivery</p>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <img src="assets/graduation.png" alt="Graduates celebrating" class="hero-img">
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h3>What we offer</h3>
+          <span class="badge">Student‑first pricing</span>
+        </div>
+        <div class="grid cards">
+          <article class="card">
+            <span class="badge">Popular</span>
+            <h4>Assignments</h4>
+            <p class="muted">Well‑researched, formatted per IGNOU guidelines. 100% original—plagiarism safe.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="#order" class="btn">Order</a>
+              <a href="#samples" class="btn secondary">Preview</a>
+            </div>
+          </article>
+          <article class="card">
+            <h4>Notes</h4>
+            <p class="muted">Concise notes to revise faster. Topic-wise and past-year aligned.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="#order" class="btn">Order</a>
+              <a href="#samples" class="btn secondary">Preview</a>
+            </div>
+          </article>
+          <article class="card">
+            <h4>Guess Papers</h4>
+            <p class="muted">High‑probability questions with smart answer frameworks.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="#order" class="btn">Order</a>
+              <a href="#samples" class="btn secondary">Preview</a>
+            </div>
+          </article>
+          <article class="card">
+            <h4>Projects & Practicals</h4>
+            <p class="muted">End‑to‑end guidance—topics, synopsis, report, viva prep.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="#order" class="btn">Order</a>
+              <a href="#samples" class="btn secondary">Preview</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLES / PREVIEWS -->
+    <section id="samples">
+      <div class="container">
+        <div class="section-head">
+          <h3>Quality samples</h3>
+          <a class="cta-outline" href="#order">Need this quality? Order →</a>
+        </div>
+        <div class="grid cards">
+          <article class="card">
+            <h4>Assignment Sample (BCOMF)</h4>
+            <p class="muted">Proper formatting · References · 30% extra revision included</p>
+            <a class="btn full" href="#" onclick="alert('Replace with your sample PDF link')">View PDF</a>
+          </article>
+          <article class="card">
+            <h4>Notes Sample (Bcoc-132)</h4>
+            <p class="muted">Exam‑oriented summaries with key formulas</p>
+            <a class="btn full" href="#" onclick="alert('Replace with your sample PDF link')">View PDF</a>
+          </article>
+          <article class="card">
+            <h4>Guess Paper Sample</h4>
+            <p class="muted">Pattern‑based predictions & answer plans</p>
+            <a class="btn full" href="#" onclick="alert('Replace with your sample PDF link')">View PDF</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER FORM -->
+    <section id="order">
+      <div class="container">
+        <div class="section-head">
+          <h3>Place your order (under 2 minutes)</h3>
+          <span class="badge">WhatsApp backup</span>
+        </div>
+        <div class="grid" style="grid-template-columns:1.2fr .8fr">
+          <div class="card">
+            <form id="orderForm">
+              <div class="field">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" placeholder="e.g., Akshay " required />
+              </div>
+              <div class="field">
+                <label for="program">Program</label>
+                <select id="program" name="program" required>
+                  <option value="">Select</option>
+                  <option>BCOMF</option>
+                  <option>BA</option>
+                  <option>BCA</option>
+                  <option>MA</option>
+                  <option>MCOM</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="course">Course Code / Subject</label>
+                <input id="course" name="course" placeholder="e.g., Bcos-186" required />
+              </div>
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose</option>
+                  <option>Assignment</option>
+                  <option>Notes</option>
+                  <option>Guess Paper</option>
+                  <option>Project</option>
+                  <option>Practical</option>
+                </select>
+              </div>
+              <div class="field">
+              </div>
+              <div class="field">
+                <label for="medium">Medium</label>
+                <select id="medium" name="medium" required>
+                  <option value="">Choose</option>
+                  <option>English</option>
+                  <option>Hindi</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="email">Email (for PDF copy)</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="phone">Your WhatsApp Number</label>
+                <input id="phone" name="phone" type="tel" placeholder="10‑digit mobile" />
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:6px">
+                <button type="button" class="btn" id="waBtn">Order on WhatsApp</button>
+                <button type="submit" class="btn" id="formBtn">Submit via Email</button>
+                <span id="waStatus" style="margin-left:10px; color:green; display:none;">Opening WhatsApp...</span>
+              </div>
 
 
- <!-- Reviews & Testimonials -->
-<section class="reviews" id="reviews">
-  <div class="container">
-    <h2>🌟 What Students Say</h2>
+              <small class="muted">By ordering you agree to our <a href="#" id="openTerms">Terms</a> & <a href="#"
+                  id="openPrivacy">Privacy Policy</a>.</small>
+            </form>
+          </div>
+          <aside class="card">
+            <h4>Why students choose us</h4>
+            <ul>
+              <li>✅ On‑time delivery guarantee</li>
+              <li>✅ Free minor revisions</li>
+              <li>✅ Proper IGNOU formatting</li>
+              <li>✅ 24×7 WhatsApp support</li>
+            </ul>
+            <hr style="border-color:rgba(255,255,255,.08)">
+            <h4>Quick contact</h4>
+            <p class="muted">Prefer chatting first? Ping us:</p>
+            <p><a id="quickWA" class="btn full" href="https://wa.me/+919031182144">Open WhatsApp</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-    <!-- ⭐ Submit Review -->
-    <form class="review-form" onsubmit="submitReview(event)">
-      <input type="text" id="reviewerName" placeholder="Your Name" required>
-      <select id="reviewRating" required>
-        <option value="" disabled selected>Rate Us</option>
-        <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
-        <option value="4">⭐⭐⭐⭐ (Very Good)</option>
-        <option value="3">⭐⭐⭐ (Good)</option>
-        <option value="2">⭐⭐ (Average)</option>
-        <option value="1">⭐ (Poor)</option>
-      </select>
-      <textarea id="reviewText" placeholder="Write your experience..." required></textarea>
-      <button type="submit">Submit Review</button>
-    </form>
+    <!-- TESTIMONIALS -->
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h3>What students say</h3>
+          <span class="badge">Real feedback</span>
+        </div>
+        <div class="carousel" aria-roledescription="carousel">
+          <div class="slides" id="slides">
+            <div class="slide">
+              <p class="quote">“Got ECO‑11 assignment in 24 hours. Formatting was perfect, references included. Scored
+                88/100.”</p>
+              <small>— S.S., BCOMF</small>
+            </div>
+            <div class="slide">
+              <p class="quote">“Guess papers matched 70% of questions. Notes were crisp for last‑minute revision.”</p>
+              <small>— P.K., BA</small>
+            </div>
+            <div class="slide">
+              <p class="quote">“They guided my project topic, synopsis and viva prep. Super supportive on WhatsApp.”</p>
+              <small>— R.R., MCOM</small>
+            </div>
+          </div>
+          <div class="dots" id="dots" aria-label="Slide indicators"></div>
+        </div>
+      </div>
+    </section>
 
-    <!-- 📝 Display Testimonials -->
-    <div id="testimonialList" class="testimonial-list">
-      <!-- Reviews will be injected here by JavaScript -->
-    </div>
-  </div>
-</section>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h3>FAQ</h3>
+          <span class="badge">Clear answers</span>
+        </div>
+        <div class="grid">
+          <div class="faq-item">
+            <div class="faq-q"><strong>Is this permitted by IGNOU?</strong><span>+</span></div>
+            <div class="faq-a">We provide guidance, notes and model answers to support your learning. Use responsibly
+              and follow your institution’s rules.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><strong>How fast is delivery?</strong><span>+</span></div>
+            <div class="faq-a">Most assignments/notes in 24–48 hours depending on workload and complexity.
+              Projects/practicals vary—share your deadline.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><strong>Payment & safety?</strong><span>+</span></div>
+            <div class="faq-a">UPI/Bank transfer accepted. We never share your data. WhatsApp chats are end‑to‑end
+              encrypted.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><strong>Revisions?</strong><span>+</span></div>
+            <div class="faq-a">Free fixes for formatting or minor content changes within 7 days of delivery.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- BLOG / TIPS -->
+    <section id="blog">
+      <div class="container">
+        <div class="section-head">
+          <h3>Study tips & updates</h3>
+          <a class="cta-outline" href="#">See all posts</a>
+        </div>
+        <div class="grid cards">
+          <article class="card">
+            <h4>IGNOU Assignment Formatting: Quick Checklist</h4>
+            <p class="muted">Cover page, margins, font sizes, citations—everything you need in 2 minutes.</p>
+            <a href="#" class="btn">Read</a>
+          </article>
+          <article class="card">
+            <h4>How to pick a strong project topic</h4>
+            <p class="muted">From interest mapping to data availability and viva readiness.</p>
+            <a href="#" class="btn">Read</a>
+          </article>
+          <article class="card">
+            <h4>Last‑minute exam plan (7 days)</h4>
+            <p class="muted">A realistic, focused revision plan that works.</p>
+            <a href="#" class="btn">Read</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Made with ❤️ by Edu-Mantra Team</p>
-    <p><a href="https://wa.me/917370872383" target="_blank">WhatsApp Support</a> | <a href="#">Privacy Policy</a></p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h3>Contact</h3>
+          <span class="badge">We reply fast</span>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr">
+          <div class="card">
+            <p><strong>WhatsApp:</strong> <a id="waTextLink" href="#">+91‑9031182144</a></p>
+            <p><strong>Email:</strong> <a href="mailto:ignouedumantra@gmail.com">ignouedumantra@gmail.com</a></p>
+            <p class="muted">Working hours: 9am–9pm IST (urgent support 24×7)</p>
+          </div>
+          <div class="card">
+            <p><strong>Address:</strong> Purnea, Bihar (Online‑first)</p>
+            <p class="muted">We operate digitally to keep prices student‑friendly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>© <span id="year"></span> Edu‑mantra · Made with ❤️ for IGNOU students</p>
+    <p style="margin-top:6px"><a href="#" id="openPrivacy">Privacy</a> · <a href="#" id="openTerms">Terms</a></p>
   </footer>
 
-  <script src="script.js" defer></script>
-<a href="https://wa.me/917370872383" class="ask-float-btn">ASK ME</a>
+  <!-- MODALS (Privacy / Terms) -->
+  <dialog id="privacyModal"
+    style="max-width:760px;border:none;border-radius:16px;background:#0b1220;color:#e5e7eb;padding:20px">
+    <h3>Privacy Policy</h3>
+    <p>We only collect information you share with us to fulfill your order: name, program, course code, requirements and
+      contact details. We do not sell or share your data. Files are stored securely and deleted on request. WhatsApp
+      chats are end‑to‑end encrypted.</p>
+    <form method="dialog" style="margin-top:12px"><button class="btn">Close</button></form>
+  </dialog>
+  <dialog id="termsModal"
+    style="max-width:760px;border:none;border-radius:16px;background:#0b1220;color:#e5e7eb;padding:20px">
+    <h3>Terms of Service</h3>
+    <p>Edu‑mantra provides educational support materials (notes, model answers, guidance). Submissions must be your own.
+      Turnaround times depend on complexity and queue. Minor revisions are free within 7 days. By ordering, you accept
+      these terms.</p>
+    <form method="dialog" style="margin-top:12px"><button class="btn">Close</button></form>
+  </dialog>
 
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Edu-mantra",
+    "url": "https://akshayjain-555.github.io/Edu-mantra/",
+    "logo": "",
+    "sameAs": ["https://wa.me/919031182144"],
+    "description": "IGNOU Assignments, Notes, Guess Papers, Projects & Practicals"
+  }
+  </script>
+
+  <script>
+    // ====== CONFIGURE THIS ======
+    const BUSINESS_WA_NUMBER = "919031182144"; // ✅ your WhatsApp number (no +, no spaces)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvgbgoqo"; // optional: e.g., https://formspree.io/f/xxxxxxx
+    // =============================
+
+    const $ = (q, root = document) => root.querySelector(q);
+    const $$ = (q, root = document) => Array.from(root.querySelectorAll(q));
+
+    // Year in footer
+    $('#year').textContent = new Date().getFullYear();
+
+    // WhatsApp quick links (footer + contact section)
+    const quickMsg = encodeURIComponent("Hi Edu-mantra! I need help with IGNOU study materials.");
+    const waURL = `https://wa.me/${BUSINESS_WA_NUMBER}?text=${quickMsg}`;
+    $('#quickWA').setAttribute('href', waURL);
+    $('#waTextLink').setAttribute('href', waURL);
+    document.getElementById("quickWA").addEventListener('click', () => window.open(waURL, "_blank"));
+
+    // ====== ORDER FORM ======
+    const form = $('#orderForm');
+    const waBtn = $('#waBtn');    // ✅ make sure button ID = waBtn in HTML
+    const formBtn = $('#formBtn');
+
+    // Prefill from localStorage
+    const saved = JSON.parse(localStorage.getItem('edumantra_user') || '{}');
+    if (saved.name) $('#name').value = saved.name;
+    if (saved.program) $('#program').value = saved.program;
+    if (saved.course) $('#course').value = saved.course;
+    if (saved.email) $('#email').value = saved.email;
+    if (saved.phone) $('#phone').value = saved.phone;
+
+    function buildOrderMessage() {
+      const data = Object.fromEntries(new FormData(form).entries());
+      const lines = [
+        `New order from: ${data.name || ''}`,
+        `Program: ${data.program || ''}`,
+        `Course: ${data.course || ''}`,
+        `Service: ${data.service || ''}`,
+        `Email: ${data.email || ''}`,
+        `Student WhatsApp: ${data.phone || ''}`
+      ];
+      return lines.join("\n");
+    }
+
+    function validateForm() {
+      const required = ['name', 'program', 'course', 'service', 'medium'];
+      for (const id of required) {
+        const el = document.getElementById(id);
+        if (!el || !el.value.trim()) {
+          el?.focus();
+          alert('Please fill: ' + id);
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // ✅ WhatsApp Order Button
+    waBtn.addEventListener('click', (e) => {
+      if (!validateForm()) return;
+      const msg = encodeURIComponent(buildOrderMessage());
+      const url = `https://wa.me/${BUSINESS_WA_NUMBER}?text=${msg}`;
+      // Save basics for next time
+      const data = Object.fromEntries(new FormData(form).entries());
+      localStorage.setItem('edumantra_user', JSON.stringify({
+        name: data.name,
+        program: data.program,
+        course: data.course,
+        email: data.email,
+        phone: data.phone
+      }));
+
+      window.open(url, '_blank');
+    });
+
+    // Email (Formspree)
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validateForm()) return;
+      if (!FORMSPREE_ENDPOINT) {
+        alert('Email submission disabled. WhatsApp order works now.');
+        return;
+      }
+      const btnText = formBtn.textContent;
+      formBtn.disabled = true; formBtn.textContent = 'Sending…';
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          alert('Thanks! We\'ll email you shortly.');
+          form.reset();
+        } else {
+          alert('Could not send via email. Please use WhatsApp order instead.');
+        }
+      } catch (err) {
+        alert('Network error. Please try WhatsApp order.');
+      } finally {
+        formBtn.disabled = false; formBtn.textContent = btnText;
+      }
+    });
+
+    // ====== TESTIMONIALS CAROUSEL ======
+    const slides = $('#slides');
+    const slideCount = $$('.slide', slides).length;
+    const dotsWrap = $('#dots');
+    let idx = 0;
+    function renderDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < slideCount; i++) {
+        const d = document.createElement('div');
+        d.className = 'dot' + (i === idx ? ' active' : '');
+        d.onclick = () => { idx = i; updateSlides(); };
+        dotsWrap.appendChild(d);
+      }
+    }
+    function updateSlides() {
+      slides.style.transform = `translateX(-${idx * 100}%)`;
+      renderDots();
+    }
+    setInterval(() => { idx = (idx + 1) % slideCount; updateSlides(); }, 5000);
+    updateSlides();
+
+    // ====== FAQ accordion ======
+    $$('.faq-item').forEach(item => {
+      const q = $('.faq-q', item);
+      const a = $('.faq-a', item);
+      const icon = q.querySelector('span');
+      q.addEventListener('click', () => {
+        const open = a.style.display === 'block';
+        a.style.display = open ? 'none' : 'block';
+        icon.textContent = open ? '+' : '–';
+      });
+    });
+
+    // ====== Privacy / Terms modals ======
+    const privacyModal = $('#privacyModal');
+    const termsModal = $('#termsModal');
+    $('#openPrivacy').addEventListener('click', (e) => { e.preventDefault(); privacyModal.showModal(); });
+    $('#openTerms').addEventListener('click', (e) => { e.preventDefault(); termsModal.showModal(); });
+  </script>
+
+  -->
 </body>
 
 </html>
