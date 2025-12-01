@@ -1,365 +1,1220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edu-Mantra | IGNOU Assignment Help</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Edu-Mantra: Premium IGNOU Handwritten Assignments & Projects 2026 | Empower Success</title>
+
+  <meta name="description"
+        content="Original handwritten IGNOU guidance from ₹299 – BA/MA projects, bundles & coaching. Beat deadlines ethically. 10000+ empowered since 2024." />
+  <meta name="keywords"
+        content="IGNOU handwritten assignment, IGNOU project help, Edu-Mantra, 2026, exam help, IGNOU notes" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+  <!-- Icons (for WhatsApp, menu, etc.) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Favicon (better: use a real file like assets/favicon.svg) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
   <style>
-    body { scroll-behavior: smooth; }
+    /* ===== Brand tokens ===== */
+    :root {
+      --cyan: #00BFFF;
+      --cyan-soft: rgba(0, 191, 255, 0.08);
+      --black: #000000;
+      --white: #ffffff;
+      --muted: #6b7280;
+      --max-width: 1200px;
+      --radius: 12px;
+      --radius-pill: 999px;
+      --shadow-lg: 0 18px 50px rgba(2, 6, 23, 0.7);
+      --ease: cubic-bezier(.17, .85, .44, 1);
+    }
+
+    /* ===== Base (mobile-first) ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #121318;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-top: 80px; /* space for fixed header */
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ===== Header / Navbar ===== */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1200;
+      background: #020617;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-family: Montserrat, Roboto, system-ui;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+    }
+
+    .brand-tag {
+      font-family: Roboto, system-ui;
+      font-size: 12px;
+      color: #d1d5db;
+      font-style: italic;
+    }
+
+    .nav-actions {
+      display: none; /* mobile default: hidden, opened by hamburger */
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: #020617;
+      padding: 10px 16px 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.6);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .nav-actions.open {
+      display: flex;
+      animation: navFade .22s ease-out;
+    }
+
+    @keyframes navFade {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      color: #e5e7eb;
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover {
+      color: var(--cyan);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-cta {
+      background: linear-gradient(90deg, var(--cyan), #00e0ff);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 28px;
+      color: #012;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0, 191, 255, 0.18);
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px rgba(0, 191, 255, 0.28);
+    }
+
+    .btn-light {
+      background: #fff;
+      border: 1px solid rgba(2, 6, 23, 0.1);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #111827;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-light:hover {
+      background: #f9fafb;
+    }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #f9fafb;
+      border-radius: 8px;
+      width: 40px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Desktop override */
+    @media (min-width: 720px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-actions {
+        position: static;
+        display: flex !important;
+        background: transparent;
+        border-bottom: none;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    /* ===== HERO ===== */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover no-repeat;
-      color: white; text-align: center; padding: 120px 20px;
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      padding: 36px 0 48px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      background: #000;
     }
-    .service-card, .trust-card {
-      transition: transform 0.3s; border-radius: 12px;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+      opacity: 0.12;
+      mix-blend-mode: overlay;
+      filter: grayscale(8%);
     }
-    .service-card:hover, .trust-card:hover { transform: translateY(-5px); }
-    .whatsapp-float {
-      position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px; z-index: 1000;
+
+    .hero-row {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 2;
     }
-    .whatsapp-float img {
-      border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s;
+
+    .hero-head {
+      font-family: Montserrat, system-ui;
+      font-weight: 800;
+      font-size: 28px;
+      color: var(--white);
+      line-height: 1.02;
     }
-    .whatsapp-float img:hover { transform: scale(1.1); }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 680px;
+      font-size: 14px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .hero-cta-primary {
+      background: var(--cyan);
+      color: #001;
+      border-radius: 42px;
+      padding: 14px 20px;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 18px 50px rgba(0, 191, 255, 0.18);
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .hero-cta-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.95);
+      background: transparent;
+      padding: 12px 18px;
+      border-radius: 42px;
+      font-size: 14px;
+    }
+
+    .hero-cta-outline:hover {
+      background: rgba(15, 23, 42, 0.6);
+    }
+
+    .hero-right {
+      margin-top: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(15, 23, 42, 0.9));
+      padding: 18px;
+      border-radius: 14px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .hero-stat {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .hero-stat h3 {
+      margin: 0;
+      font-family: Montserrat;
+      color: var(--white);
+      font-size: 22px;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .tag {
+      background: var(--cyan-soft);
+      color: var(--cyan);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 48px 0;
+    }
+
+    .section-title {
+      font-family: Montserrat;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .section-h {
+      font-family: Montserrat;
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    /* WHY CHOOSE (cards) */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(2, 6, 23, 0.04);
+    }
+
+    .card h4 {
+      margin: 8px 0;
+      font-family: Montserrat;
+      font-size: 16px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* stats bar */
+    .stats-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--cyan), #00e0ff);
+      color: #001;
+    }
+
+    /* testimonials carousel (simple) */
+    .test-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 6px 4px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .testimonial {
+      min-width: 260px;
+      background: #f7f8fb;
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid rgba(2, 6, 23, 0.04);
+      scroll-snap-align: start;
+    }
+
+    .stars {
+      color: #f6c84c;
+      margin-bottom: 4px;
+    }
+
+    /* pricing table – enhanced */
+    .pricing-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 18px;
+      background: #f8fafc;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .pricing-table thead th {
+      background: linear-gradient(90deg, var(--cyan), #00e0ff);
+      color: #012;
+      padding: 14px 16px;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .pricing-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .pricing-table tbody tr:nth-child(odd) {
+      background: #ffffff;
+    }
+
+    .pricing-table tbody tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    .pricing-table tbody tr:hover {
+      background: rgba(0, 191, 255, 0.06);
+    }
+
+    .pricing-table tr.best-plan {
+      position: relative;
+      background: rgba(0, 191, 255, 0.04);
+    }
+
+    .pricing-table tr.best-plan td {
+      border-bottom-color: rgba(0, 191, 255, 0.3);
+    }
+
+    .best-pill {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #022c22;
+      color: #a7f3d0;
+    }
+
+    /* mobile – table as cards */
+    @media (max-width: 720px) {
+      .pricing-table thead {
+        display: none;
+      }
+
+      .pricing-table,
+      .pricing-table tbody,
+      .pricing-table tr,
+      .pricing-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .pricing-table tr {
+        margin-bottom: 14px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+      }
+
+      .pricing-table td {
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .pricing-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-bottom: 3px;
+        font-family: Montserrat, sans-serif;
+      }
+
+      .pricing-table td:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cyan);
+      color: #001;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* contact form */
+    .form-card {
+      background: #fff;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(2, 6, 23, 0.04);
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(2, 6, 23, 0.06);
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    button[type=submit] {
+      background: var(--cyan);
+      color: #001;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button[type=submit]:hover {
+      box-shadow: 0 10px 22px rgba(0, 191, 255, 0.3);
+    }
+
+    /* footer */
+    footer {
+      background: #0b0f1a;
+      color: #fff;
+      padding: 18px 0;
+      margin-top: 24px;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* cookie */
+    .cookie {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 18px;
+      background: #fff;
+      padding: 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+      align-items: center;
+      z-index: 1400;
+      font-size: 13px;
+    }
+
+    /* floating whatsapp */
+    .wa-float {
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      z-index: 1300;
+    }
+
+    .wa-float a {
+      display: inline-block;
+      background: var(--cyan);
+      height: 56px;
+      width: 56px;
+      border-radius: 50%;
+      box-shadow: 0 18px 48px rgba(0, 191, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #001;
+      font-size: 22px;
+    }
+
+    /* reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: all .6s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== Responsive layout tweaks ===== */
+    @media (min-width: 720px) {
+      .hero-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero-head {
+        font-size: 36px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        width: 92%;
+      }
+    }
   </style>
 </head>
-<body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Edu-Mantra</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#proofs">Proofs</a></li>
-        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-        <li class="nav-item"><a class="nav-link" href="#review">Review</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+<body id="top">
+
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner" aria-label="Top navigation">
+    <div class="container nav-wrap">
+
+      <!-- Logo + brand -->
+      <a href="#top" class="brand" style="text-decoration:none;">
+        <img src="assets/logo.png" alt="Edu-Mantra Logo">
+        <div>
+          <div class="brand-title">Edu-Mantra</div>
+          <div class="brand-tag">
+            Transform Future. By Empowering Education
+          </div>
+        </div>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="nav-actions" aria-label="Main navigation">
+        <div class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="#how">How It Works</a>
+          <a class="nav-link" href="#testimonials">Testimonials</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-left:12px">
+          <a class="btn-cta" href="#pricing" title="Explore pricing">Explore Pricing</a>
+          <a class="btn-light" id="whatsButton"
+             href="https://wa.me/919031182144?text=Hi%20Edu-Mantra%20Team%20I%20need%20help%20with%20IGNOU%20assignments"
+             target="_blank" rel="noopener">
+            Free WhatsApp Consult
+          </a>
+        </div>
+      </nav>
+
     </div>
-  </div>
-</nav>
+  </header>
 
-<!-- Hero -->
-<header class="hero">
-  <div class="container">
-    <h1 class="display-4 fw-bold">IGNOU Assignments Made Easy</h1>
-    <p class="lead">📅 Deadline: <b>30th Sept</b> – Don’t risk late submission!</p>
-    <div class="mt-4">
-      <a href="https://wa.me/919031182144" class="btn btn-success btn-lg me-2"><i class="bi bi-whatsapp"></i> WhatsApp Now</a>
-      <a href="#services" class="btn btn-light btn-lg">Explore Services</a>
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero section">
+    <div class="container hero-row">
+      <div style="flex:1;max-width:720px">
+        <h1 class="hero-head reveal">
+          Empower Your IGNOU Future with Edu-Mantra's
+          <span style="color:var(--cyan)">Handwritten Excellence</span>
+        </h1>
+        <p class="hero-sub reveal">
+          Get plagiarism-proof handwritten assignments &amp; projects (not cheap PDFs).
+          10,000+ students empowered since 2024 — ethical guidance for July 2026 success.
+          Fast response via WhatsApp.
+        </p>
+
+        <div class="hero-ctas reveal">
+          <a href="#pricing" class="hero-cta-primary" aria-label="Explore pricing">
+            Explore Pricing <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/919031182144?text=Hi%20Edu-Mantra%20Team%2C%20I%20need%20a%20quote"
+             class="hero-cta-outline" target="_blank" rel="noopener">
+            Free WhatsApp Consult
+          </a>
+        </div>
+
+        <div class="hero-tags reveal" aria-hidden="true" style="margin-top:14px">
+          <span class="tag">100% IGNOU-Accepted</span>
+          <span class="tag">Refund if Rejected</span>
+          <span class="tag">Handwritten • Hardcopy</span>
+        </div>
+      </div>
+
+      <aside class="hero-right reveal" aria-hidden="true" style="min-width:260px;">
+        <div class="hero-stat">
+          <h3>95%+</h3>
+          <div style="color:var(--white);opacity:.9">Approval Rate</div>
+        </div>
+        <p style="color:rgba(255,255,255,0.9);margin:8px 0">
+          Average delivery: <strong>24–48 hours</strong> (typed/handwritten options; rush available)
+        </p>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn-cta" id="empowerNow">Empower Me</button>
+          <button class="btn-light" id="priceModal">Pay 50% (Demo)</button>
+        </div>
+      </aside>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- Sticky Deadline Countdown with WhatsApp CTA -->
-<div id="deadline-bar" class="bg-danger text-white text-center py-2 fixed-top shadow-sm d-flex justify-content-center align-items-center gap-3">
-  <strong>⚠️ IGNOU Deadline: <span id="countdown"></span></strong>
-  <a href="https://wa.me/919031182144?text=Hi%20Edu-Mantra%20Team,%20I%20want%20help%20with%20IGNOU%20Assignments%20before%20deadline."
-     target="_blank" 
-     class="btn btn-light btn-sm fw-bold">
-     📲 Order Now
-  </a>
-</div>
+  <!-- WHY CHOOSE / EMPOWER -->
+  <section id="services" class="reveal" aria-labelledby="why">
+    <div class="container">
+      <p class="section-title">Why Edu-Mantra</p>
+      <h2 id="why" class="section-h">Why Edu-Mantra Outshines the Rest</h2>
+      <p class="section-sub">
+        Premium handwritten assignments and project support — ethical, original, and tailored to IGNOU patterns.
+        Made for busy professionals who need reliable approval and exam focus.
+      </p>
 
-<!-- Spacer to prevent content overlap -->
-<div style="margin-top: 60px;"></div>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card">
+          <h4>Authentic Handwritten Mastery</h4>
+          <p>
+            IGNOU-compliant handwritten pages (10–50+ pages). Neat headings, consistent pens,
+            and subject-wise referencing — no cheap PDFs, no AI duplicates.
+          </p>
+        </div>
 
-<!-- Spacer to prevent content overlap -->
-<div style="margin-top: 60px;"></div>
+        <div class="card">
+          <h4>Project Empowerment</h4>
+          <p>
+            From synopsis to dissertation: topic selection, report writing, viva prep.
+            Collaborative revisions included. Hardcopy delivery available nationwide.
+          </p>
+        </div>
 
-<!-- Spacer to prevent content overlap -->
-<div style="margin-top: 60px;"></div>
-<!-- Spacer to prevent content overlap -->
-<div style="margin-top: 60px;"></div>
+        <div class="card">
+          <h4>Approval &amp; Trust</h4>
+          <p>
+            95% on-time delivery, 4.9/5 aggregate rating. Refund if rejected under our guarantee (terms apply).
+            Transparent pricing &amp; installment options for larger projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Services -->
-<section id="services" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Our Services</h2>
-    <div class="row g-4">
+  <!-- STATS BAR -->
+  <section class="reveal" aria-hidden="true">
+    <div class="container">
+      <div class="stats-bar" role="status" aria-live="polite">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:180px">
+            <strong>₹200k+</strong>
+            <div style="font-size:13px">Delivered Wins</div>
+          </div>
+          <div style="flex:1;min-width:180px">
+            <strong>95% On-Time</strong>
+            <div style="font-size:13px">On-time Delivery Rate</div>
+          </div>
+          <div style="flex:1;min-width:180px">
+            <strong>4.9/5</strong>
+            <div style="font-size:13px">From 150+ Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-3">
-  <div class="card service-card p-3 shadow-sm h-100">
-    <i class="bi bi-journal-text display-4 text-primary"></i>
-    <h5 class="mt-3">Assignments</h5>
-    <p>IGNOU format, plagiarism-free, approval guaranteed.</p>
-    <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-      📄 View Sample
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="reveal" aria-labelledby="test-heading">
+    <div class="container">
+      <p class="section-title">Student Voices</p>
+      <h2 id="test-heading" class="section-h">Empowered Voices: Real IGNOU Transformations</h2>
+      <div class="test-row" aria-roledescription="carousel">
+        <div class="testimonial" role="group" aria-label="Ravi, Lucknow">
+          <div class="stars">★★★★★</div>
+          <p><strong>Ravi, Lucknow</strong><br> "Edu-Mantra's handwritten MPS pack got me 72% — no rejections!"</p>
+        </div>
+
+        <div class="testimonial" role="group" aria-label="Lokesh Singh">
+          <div class="stars">★★★★★</div>
+          <p><strong>Lokesh Singh</strong><br> "The assignments are really good yaar — writing is neat and consistent. Zero stress."</p>
+        </div>
+
+        <div class="testimonial" role="group" aria-label="Meenakshi">
+          <div class="stars">★★★★★</div>
+          <p><strong>Meenakshi, PGDVS</strong><br> "Your guess papers covered 70% of the exam. Notes simplified the book perfectly."</p>
+        </div>
+
+        <div class="testimonial" role="group" aria-label="Gita">
+          <div class="stars">★★★★★</div>
+          <p><strong>Gita</strong><br> "All perfect — thank you so much Akshay ji."</p>
+        </div>
+      </div>
+      <p style="margin-top:8px;color:var(--muted)">See more on Google Reviews (link)</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="reveal" aria-labelledby="pricing-h">
+    <div class="container">
+      <p class="section-title">Pricing</p>
+      <h2 id="pricing-h" class="section-h">Invest in Empowerment — Clear Pricing</h2>
+      <p class="section-sub">
+        Transparent prices, no surprise fees. Choose rush or bundle options for savings.
+      </p>
+
+      <div style="overflow:auto;margin-top:12px">
+        <table class="pricing-table" role="table" aria-label="Pricing table">
+          <thead>
+            <tr>
+              <th>Empowerment Type</th>
+              <th>Description</th>
+              <th>Investment (₹)</th>
+              <th>Timeline</th>
+              <th>Extras</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Empowerment Type">Single Handwritten Assignment</td>
+              <td data-label="Description">10–20 pages (IGNOU format)</td>
+              <td data-label="Investment (₹)">₹299–349</td>
+              <td data-label="Timeline">5–7 days</td>
+              <td data-label="Extras">Refund if Rejected</td>
+            </tr>
+            <tr>
+              <td data-label="Empowerment Type">Customised Assignment (30+ pages)</td>
+              <td data-label="Description">Complex subjects, long answers</td>
+              <td data-label="Investment (₹)">₹399–499</td>
+              <td data-label="Timeline">7–10 days</td>
+              <td data-label="Extras">Plagiarism Check Free</td>
+            </tr>
+            <tr class="best-plan">
+              <td data-label="Empowerment Type">
+                Full Semester Bundle
+                <span class="best-pill">Best Value</span>
+              </td>
+              <td data-label="Description">4–8 assignments (discount)</td>
+              <td data-label="Investment (₹)">₹1,499–2,499</td>
+              <td data-label="Timeline">10–14 days</td>
+              <td data-label="Extras">Free Syllabus Review</td>
+            </tr>
+            <tr>
+              <td data-label="Empowerment Type">Basic Project Guidance</td>
+              <td data-label="Description">Synopsis + Report</td>
+              <td data-label="Investment (₹)">₹2,999–3,499</td>
+              <td data-label="Timeline">10–15 days</td>
+              <td data-label="Extras">Collaborative Revisions</td>
+            </tr>
+            <tr>
+              <td data-label="Empowerment Type">Full Dissertation / Project</td>
+              <td data-label="Description">Complete w/ your inputs</td>
+              <td data-label="Investment (₹)">₹5,499–6,999</td>
+              <td data-label="Timeline">15–20 days</td>
+              <td data-label="Extras">50% Upfront, Installments</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:8px;color:var(--muted);font-size:13px">
+        <em>Nationwide delivery • Ethical guidance only — no proxies • Prices indicative</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="reveal" aria-labelledby="how-h">
+    <div class="container">
+      <p class="section-title">How</p>
+      <h2 id="how-h" class="section-h">
+        Your Seamless Path to IGNOU Success — 4 Steps
+      </h2>
+      <p class="section-sub">
+        Clear flow: share, confirm, collaborate, submit.
+      </p>
+
+      <div class="timeline" style="margin-top:12px">
+        <div class="timeline-item">
+          <div class="circle">1</div>
+          <div>
+            <h4 style="margin:0">Discover Needs</h4>
+            <p class="section-sub">
+              Share course code and deadline via form or WhatsApp — free quote within 1 hour.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="circle">2</div>
+          <div>
+            <h4 style="margin:0">Secure Commitment</h4>
+            <p class="section-sub">
+              Pay 50% via UPI/Razorpay; transparent pricing and timeline.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="circle">3</div>
+          <div>
+            <h4 style="margin:0">Collaborate &amp; Refine</h4>
+            <p class="section-sub">
+              Review draft samples and request personalization; we refine.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="circle">4</div>
+          <div>
+            <h4 style="margin:0">Thrive &amp; Support</h4>
+            <p class="section-sub">
+              Get hardcopy + PDF; exam tips included. Post-submission support provided.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal" aria-labelledby="contact-h">
+    <div class="container">
+      <p class="section-title">Contact</p>
+      <h2 id="contact-h" class="section-h">Connect to Transform — 24/7 Support</h2>
+      <p class="section-sub">
+        Prefer chat? WhatsApp for fastest response. Or fill the quick form below.
+      </p>
+
+      <div style="display:grid;gap:12px;margin-top:12px">
+        <div class="form-card">
+          <form id="leadForm" aria-label="Contact form">
+            <div style="display:grid;grid-template-columns:1fr;gap:8px">
+              <input name="name" type="text" placeholder="Full name" required aria-required="true" />
+              <input name="email" type="email" placeholder="Email (best for invoices)" required />
+              <input name="phone" type="tel" placeholder="Phone / WhatsApp (start with +91)" required />
+              <select name="service" required>
+                <option value="">Select service</option>
+                <option>Single Handwritten Assignment</option>
+                <option>Customised Assignment</option>
+                <option>Full Semester Bundle</option>
+                <option>Project / Dissertation</option>
+              </select>
+              <textarea name="message" rows="4"
+                        placeholder="Brief requirement / subject code / last date"></textarea>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+                <button type="submit">Empower My Query</button>
+                <button type="button" id="payNow"
+                        style="background:#f3f3f3;border:1px solid rgba(0,0,0,0.06);padding:10px;border-radius:8px;cursor:pointer">
+                  Pay 50% Now (Demo)
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:200px">
+            <strong>WhatsApp</strong><br>
+            <a href="https://wa.me/919031182144" id="waLink">+91 9031182144</a>
+          </div>
+          <div class="card" style="flex:1;min-width:200px">
+            <strong>Email</strong><br>
+            <a href="mailto:ignouedumantra@gmail.com">ignouedumantra@gmail.com</a>
+          </div>
+          <div class="card" style="flex:1;min-width:200px">
+            <strong>Location</strong><br>
+            Purnea, Bihar (Postal dispatch nationwide)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer role="contentinfo">
+    <div class="container footer-flex">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <strong>Edu-Mantra</strong><br>
+          <small style="color:var(--muted)">Transform Future. By Empowering Education</small>
+        </div>
+        <div style="color:var(--muted)">
+          © 2025 Edu-Mantra • <a href="#privacy" style="color:var(--muted)">Privacy</a> •
+          <a href="#terms" style="color:var(--muted)">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float" aria-hidden="false">
+    <a href="https://wa.me/919031182144?text=Hi%20Edu-Mantra%2C%20I%20need%20help" target="_blank" rel="noopener"
+       aria-label="Chat on WhatsApp">
+      <i class="bi bi-whatsapp" style="color:#001;font-size:22px"></i>
     </a>
   </div>
-</div>
 
-      <!-- Notes -->
-      <div class="col-md-3">
-        <div class="card service-card p-3 shadow-sm h-100">
-          <i class="bi bi-book-half display-4 text-success"></i>
-          <h5 class="mt-3">Notes</h5>
-          <p>Concise, exam-oriented study notes for easy revision.</p>
-          <a href="samples/notes-sample.pdf" target="_blank" class="btn btn-outline-success btn-sm mt-2">📄 View Sample</a>
-        </div>
-      </div>
-
-      <!-- Guess Papers -->
-      <div class="col-md-3">
-        <div class="card service-card p-3 shadow-sm h-100">
-          <i class="bi bi-lightbulb display-4 text-warning"></i>
-          <h5 class="mt-3">Guess Papers</h5>
-          <p>Predicted questions based on IGNOU past patterns.</p>
-          <a href="samples/guesspaper-sample.pdf" target="_blank" class="btn btn-outline-warning btn-sm mt-2">📄 View Sample</a>
-        </div>
-      </div>
-
-      <!-- Projects -->
-      <div class="col-md-3">
-        <div class="card service-card p-3 shadow-sm h-100">
-          <i class="bi bi-diagram-3 display-4 text-danger"></i>
-          <h5 class="mt-3">Projects</h5>
-          <p>Complete help for projects, practicals & viva prep.</p>
-          <a href="samples/project-sample.pdf" target="_blank" class="btn btn-outline-danger btn-sm mt-2">📄 View Sample</a>
-        </div>
-      </div>
-
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookie">
+    <div>
+      We use cookies to improve experience. By continuing you accept our
+      <a href="#privacy">privacy policy</a>.
+    </div>
+    <div>
+      <button id="acceptCookie"
+              style="background:var(--cyan);border:none;padding:8px 12px;border-radius:8px;cursor:pointer">
+        Accept
+      </button>
     </div>
   </div>
-</section>
 
-<!-- Proofs -->
-<section id="proofs" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Proof of Trust</h2>
-    <div class="row g-3">
-      <div class="col-md-4"><img src="proof1.jpg" class="img-fluid rounded shadow"></div>
-      <div class="col-md-4"><img src="proof2.jpg" class="img-fluid rounded shadow"></div>
-      <div class="col-md-4"><img src="proof3.jpg" class="img-fluid rounded shadow"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials" class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Student Testimonials</h2>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <blockquote class="blockquote">
-            <p>“Got ECO-11 assignment in 24 hours. Scored 88/100!”</p>
-            <footer class="blockquote-footer">S.S., BCOMF</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“Customer's smile is real earning 💯🙏🏻👍🏻”</p>
-            <footer class="blockquote-footer">Shantanu singh, PGJMC</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p> Thank you sir 🙏🏻  Post receive ho gya mujhe ❤️”</p>
-            <footer class="blockquote-footer">Hariom kumar jha, BCOMF</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“Bhut achaa Jo aapne bheja 100 percent usme se hi aaya Ab next bhejo.”</p>
-            <footer class="blockquote-footer">Anil jat., BCOMF</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“ Hii ur guess papers r good. Thnk u 70% was covered Ur answers helped me cover d topics ..... Aap IGNOU ki book ko hi simplfy kar do notes main”</p>
-            <footer class="blockquote-footer">Meenakshi sharma., PGDVS</footer>
-          </blockquote>
-        </div>
-        <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“ All are perfect, Thank you so much akshay ji”</p>
-            <footer class="blockquote-footer">Gita.,PGJMC</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“Assignments are well written”</p>
-            <footer class="blockquote-footer">Shiddarth garg., BCOMF</footer>
-          </blockquote>
-        </div>
-         <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“Assignment have been received and submitted before deasline”</p>
-            <footer class="blockquote-footer">Sudhansu choudhary., BCOMF</footer>
-          </blockquote>
-        </div>
-        <div class="carousel-item">
-          <blockquote class="blockquote">
-            <p>“Project guidance was superb. Very supportive team.”</p>
-            <footer class="blockquote-footer">R.R., MCOM</footer>
-          </blockquote>
-        </div>
+  <!-- Modals / small UI -->
+  <div id="modal" role="dialog" aria-modal="true"
+       style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1500;align-items:center;justify-content:center">
+    <div style="background:#fff;padding:16px;border-radius:12px;max-width:420px;width:94%">
+      <h3 style="margin-top:0">Pay 50% (Demo)</h3>
+      <p style="color:var(--muted)">This is a demo UPI/Payment modal. Integrate real UPI/PG here.</p>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button id="closeModal"
+                style="background:#eee;border:none;padding:8px;border-radius:8px;cursor:pointer">Close</button>
       </div>
     </div>
   </div>
-</section>
 
-<section id="faq" style="padding:60px 20px; background:#f9f9f9;">
-  <div style="max-width:900px; margin:auto;">
-    <h2 style="text-align:center; margin-bottom:40px; color:#222;">❓ Frequently Asked Questions</h2>
+  <!-- Minimal JS: nav toggle, reveal, cookie, form demo -->
+  <script>
+    // Mobile nav toggle
+    (function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav-actions');
 
-    <div style="margin-bottom:20px;">
-      <h3 style="cursor:pointer; color:#ff6600;">📌 Q1: Are your assignments 100% plagiarism-free?</h3>
-      <p style="margin:10px 0 20px 0; font-size:15px; line-height:1.6;">
-        Yes ✅ All our assignments are prepared from scratch, based on IGNOU guidelines, and checked to ensure 100% originality.
-      </p>
-    </div>
+      if (!toggle || !nav) return;
 
-    <div style="margin-bottom:20px;">
-      <h3 style="cursor:pointer; color:#ff6600;">📌 Q2: How fast can I get my assignment?</h3>
-      <p style="margin:10px 0 20px 0; font-size:15px; line-height:1.6;">
-        Usually within 24–48 hours ⏱️. For urgent cases, we also provide same-day delivery (extra charges apply).
-      </p>
-    </div>
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
 
-    <div style="margin-bottom:20px;">
-      <h3 style="cursor:pointer; color:#ff6600;">📌 Q3: Can I see a sample before placing an order?</h3>
-      <p style="margin:10px 0 20px 0; font-size:15px; line-height:1.6;">
-        Absolutely 🙌 We have a collection of sample assignments you can check <a href="#samples" style="color:#007BFF;">here</a> before deciding.
-      </p>
-    </div>
+      // Close nav on link click (mobile)
+      nav.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
 
-    <div style="margin-bottom:20px;">
-      <h3 style="cursor:pointer; color:#ff6600;">📌 Q4: How do I place an order?</h3>
-      <p style="margin:10px 0 20px 0; font-size:15px; line-height:1.6;">
-        It’s simple! Just WhatsApp us at <a href="https://wa.me/919031182144" style="color:#25D366;">+91 9031182144</a> with your subject details.  
-        Our team will confirm and deliver your assignment before the deadline.
-      </p>
-    </div>
+    // Reveal animation using IntersectionObserver
+    (function () {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
 
-    <div style="margin-bottom:20px;">
-      <h3 style="cursor:pointer; color:#ff6600;">📌 Q5: Do you provide projects and dissertations also?</h3>
-      <p style="margin:10px 0 20px 0; font-size:15px; line-height:1.6;">
-        Yes 📚 We provide complete support for IGNOU projects, dissertations, and synopsis writing.
-      </p>
-    </div>
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    })();
 
-  </div>
-</section>
+    // Cookie banner
+    (function () {
+      const cookie = document.getElementById('cookie');
+      const btn = document.getElementById('acceptCookie');
+      if (!cookie || !btn) return;
 
-<!-- Process -->
-<section id="process" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">How It Works</h2>
-    <div class="row g-4">
-      <div class="col-md-3"><div class="trust-card p-3 shadow-sm h-100"><i class="bi bi-chat-dots fs-1 text-primary"></i><h6>Step 1</h6><p>WhatsApp us</p></div></div>
-      <div class="col-md-3"><div class="trust-card p-3 shadow-sm h-100"><i class="bi bi-check2-circle fs-1 text-success"></i><h6>Step 2</h6><p>Confirm order</p></div></div>
-      <div class="col-md-3"><div class="trust-card p-3 shadow-sm h-100"><i class="bi bi-file-earmark-text fs-1 text-warning"></i><h6>Step 3</h6><p>Get assignment</p></div></div>
-      <div class="col-md-3"><div class="trust-card p-3 shadow-sm h-100"><i class="bi bi-trophy fs-1 text-danger"></i><h6>Step 4</h6><p>Submit on time</p></div></div>
-    </div>
-  </div>
-</section>
+      if (localStorage.getItem('edu_cookie')) {
+        cookie.style.display = 'none';
+      }
 
-<!-- Review -->
-<section id="review" class="py-5 text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-4">Write Your Review</h2>
-    <p>Your feedback makes us stronger! Share your experience.</p>
-    <a href="https://forms.gle/qexm7Vx8g2SJqWxD6" target="_blank" class="btn btn-primary btn-lg rounded-pill px-5">✍️ Submit Review</a>
-  </div>
-</section>
+      btn.addEventListener('click', () => {
+        localStorage.setItem('edu_cookie', '1');
+        cookie.style.display = 'none';
+      });
+    })();
 
-<footer style="background:#111; color:#ddd; padding:20px 15px; margin-top:40px; font-family:Arial, sans-serif;">
-  <div style="max-width:1100px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px;">
+    // demo modal (pay)
+    document.getElementById('priceModal')?.addEventListener('click', () => {
+      document.getElementById('modal').style.display = 'flex';
+    });
+    document.getElementById('closeModal')?.addEventListener('click', () => {
+      document.getElementById('modal').style.display = 'none';
+    });
 
-    <!-- About -->
-    <div>
-      <h2 style="color:#ffcc00; margin-bottom:8px; font-size:20px;">Edu-Mantra</h2>
-      <p style="font-size:12px; line-height:1.6; color:#bbb; margin:0;">
-        Trusted partner for IGNOU Assignments, Projects & Exam Support.  
-        Reliable, plagiarism-free, and always on time.
-      </p>
-    </div>
+    // lead form demo submit
+    document.getElementById('leadForm').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      const data = new FormData(this);
+      alert('Thanks! We received your request (demo). Please also ping us on WhatsApp for fastest reply.');
 
-    <!-- Quick Links -->
-    <div>
-      <h3 style="margin-bottom:8px; color:#ffcc00; font-size:15px;">Quick Links</h3>
-      <ul style="list-style:none; padding:0; margin:0; font-size:13px; line-height:1.8;">
-        <li><a href="#hero" style="color:#ddd; text-decoration:none;">Home</a></li>
-        <li><a href="#services" style="color:#ddd; text-decoration:none;">Services</a></li>
-        <li><a href="#samples" style="color:#ddd; text-decoration:none;">Samples</a></li>
-        <li><a href="#reviews" style="color:#ddd; text-decoration:none;">Reviews</a></li>
-        <li><a href="#faq" style="color:#ddd; text-decoration:none;">FAQ</a></li>
-      </ul>
-    </div>
+      const name = data.get('name') || '';
+      const service = data.get('service') || '';
+      const message = data.get('message') || '';
 
-    <!-- Contact -->
-    <div>
-      <h3 style="margin-bottom:8px; color:#ffcc00; font-size:15px;">Contact</h3>
-      <p style="margin:4px 0; font-size:13px;">📍 Purnea, Bihar</p>
-      <p style="margin:4px 0; font-size:13px;">📞 <a href="tel:+917370872383" style="color:#ddd; text-decoration:none;">+91 7370872383</a></p>
-      <p style="margin:4px 0; font-size:13px;">💬 <a href="https://wa.me/919031182144" target="_blank" style="color:#25D366; text-decoration:none;">WhatsApp Us</a></p>
-      <p style="margin:4px 0; font-size:13px;">✉️ <a href="mailto:edumantrahelp@gmail.com" style="color:#ddd; text-decoration:none;">ignouedumantra@gmail.com</a></p>
-    </div>
+      const text = `Hi Edu-Mantra, I am ${name}. Need ${service}. Details: ${message}`;
+      const wa = 'https://wa.me/919031182144?text=' + encodeURIComponent(text);
+      window.open(wa, '_blank');
+    });
 
-    <!-- Newsletter -->
-    <div>
-      <h3 style="margin-bottom:8px; color:#ffcc00; font-size:15px;">Stay Updated</h3>
-      <form style="display:flex; gap:6px; flex-wrap:wrap;">
-        <input type="email" placeholder="Your email" 
-               style="flex:1; padding:8px; border:none; border-radius:4px; font-size:12px;">
-        <button type="submit" 
-                style="background:#ffcc00; border:none; padding:8px 14px; border-radius:4px; cursor:pointer; font-size:12px; font-weight:bold;">
-          Subscribe
-        </button>
-      </form>
-    </div>
-  </div>
+    // Accessibility: focus outline on keyboard navigation (optional)
+    (function () {
+      document.body.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') document.documentElement.classList.add('show-focus');
+      });
+    })();
+  </script>
 
-  <hr style="margin:15px 0; border:0.5px solid #333;">
-  <p style="text-align:center; font-size:11px; color:#888; margin:0;">
-    © 2025 Edu-Mantra. All Rights Reserved. | Designed with ❤️ by Akshay
-  </p>
-</footer>
-
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/919031182144" class="whatsapp-float" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60" height="60">
-</a>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// Set deadline date
-var deadline = new Date("Sep 30, 2025 23:59:59").getTime();
-
-// Update countdown every 1 second
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = deadline - now;
-
-  // Time calculations
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display result
-  document.getElementById("countdown").innerHTML =
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-  // If deadline passed
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "⏳ Deadline Closed!";
-    document.getElementById("deadline-bar").classList.remove("bg-danger");
-    document.getElementById("deadline-bar").classList.add("bg-dark");
+  <!-- JSON-LD Schema (REMEMBER: replace your-domain.com with real domain) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Edu-Mantra",
+    "image": "https://your-domain.com/assets/logo.png",
+    "@id": "https://your-domain.com/",
+    "url": "https://your-domain.com/",
+    "telephone": "+919031182144",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Purnea",
+      "addressRegion": "Bihar",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹",
+    "description": "Edu-Mantra - Premium IGNOU handwritten assignments, projects and notes. Ethical guidance and hardcopy delivery.",
+    "sameAs": []
   }
-}, 1000);
-</script>
+  </script>
 
 </body>
+
 </html>
